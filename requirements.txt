@@ -1,11 +1,27 @@
-streamlit
-pandas
-numpy
-folium
-streamlit-folium
-plotly
-requests
-pydeck
-st-aggrid
-html5lib
-beautifulsoup4
+# Core
+streamlit>=1.24.0
+
+# Data + utils
+pandas>=1.5
+numpy>=1.24
+requests>=2.28
+
+# Mapping & folium integration
+folium>=0.14.0
+streamlit-folium>=0.11.0
+
+# Charts
+plotly>=5.10.0
+pydeck>=0.8.0
+
+# Optional nicer table
+st-aggrid>=0.4.0
+
+# HTML / parsing helpers (small)
+beautifulsoup4>=4.12.2
+lxml>=4.9.2
+html5lib>=1.1
+
+# Pin these if installer reports conflicts
+# rich==14.2.0
+# markdown-it-py==2.2.0
