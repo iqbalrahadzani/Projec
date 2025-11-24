@@ -1,0 +1,17 @@
+# File: .streamlit/config.toml
+
+[theme]
+# Warna utama untuk widget interaktif (seperti slider, tombol)
+primaryColor="#00A0B0"
+
+# Warna latar belakang utama aplikasi
+backgroundColor="#F0F8FF"  # AliceBlue, warna biru yang sangat muda
+
+# Warna latar belakang untuk sidebar
+secondaryBackgroundColor="#E6F2FF" # Biru muda yang sedikit lebih pekat dari background utama
+
+# Warna teks utama
+textColor="#0D1F2D"
+
+# Jenis font (opsional)
+font="sans serif"
