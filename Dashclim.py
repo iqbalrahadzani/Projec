@@ -560,9 +560,9 @@ if main_page == "Bulanan":
         # Pecah format YYYY-MM
         tahun, bulan_num = report_month.split("-")
         bulan_nama = {
-            "01": "Januari", "02": "Februari", "03": "Maret", "04": "April",
-            "05": "Mei", "06": "Juni", "07": "Juli", "08": "Agustus",
-            "09": "September", "10": "Oktober", "11": "November", "12": "Desember"
+            "1": "Januari", "2": "Februari", "3": "Maret", "4": "April",
+            "5": "Mei", "6": "Juni", "7": "Juli", "8": "Agustus",
+            "9": "September", "10": "Oktober", "11": "November", "12": "Desember"
         }.get(bulan_num, bulan_num)
 
         st.header(f"📆 Monitoring CLIMAT {bulan_nama} {tahun}")
@@ -1929,4 +1929,5 @@ else:
 
 # Footer
 st.markdown("---")
-st.caption("Dashboard Monitoring CLIMAT — BMKG. Template v0.2")
+st.caption("Dashboard Monitoring CLIMAT — BMKG")
+st.caption("Aktualisasi Muhammad Iqbal Rahadzani")
