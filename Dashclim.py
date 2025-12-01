@@ -408,7 +408,7 @@ def plot_pie_total(df_monthly: pd.DataFrame):
 # --------------------------
 # Minimal Sidebar: hanya navigasi (Pilih Halaman & Subpage)
 # --------------------------
-st.sidebar.title("Navigasi")
+st.sidebar.title("Menu")
 # main_page = st.sidebar.radio("Pilih Halaman:", ["Bulanan", "Tahunan"], index=0)
 
 # Gunakan default sheet URL (tidak lagi diambil dari sidebar)
@@ -1177,7 +1177,7 @@ else:
                     import plotly.express as px
                     import plotly.graph_objects as go
 
-                    st.markdown("Diagram Batang per Bulan (Januari—Desember)")
+                    st.markdown("### Diagram Batang per Bulan (Januari—Desember)")
 
                     # Build df_bulan ensuring order Jan..Des even if some months missing
                     df_bulan_rows = []
