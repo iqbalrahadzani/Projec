@@ -1466,7 +1466,7 @@ else:
         st.subheader("Rincian Data Tahunan")
         tab1, tab2 = st.tabs(["DeltaHours", "Status"])
         with tab1:
-            st.markdown("Tabel DeltaHours (No | Stasiun | WMO ID | Jan..Des) — menampilkan nilai jam saja (header bulan tanpa '(hrs)')")
+            st.markdown(" ")
 
             def _prepare_delta_display_local(df_src: pd.DataFrame) -> pd.DataFrame:
                 """
