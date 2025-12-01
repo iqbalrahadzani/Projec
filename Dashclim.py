@@ -464,7 +464,7 @@ df_monthly_summary = data.get("monthlysummary", pd.DataFrame())
 #  App Main Navigation
 # --------------------------
 st.write("")  # spacing
-main_page = st.sidebar.radio("Pilih Halaman:", ["Last Month", "Tahunan"], index=0, key="main_page_radio")
+main_page = st.sidebar.radio("Pilih Halaman:", ["Last Month", "This Year"], index=0, key="main_page_radio")
 
 #  HALAMAN BULANAN (robust)
 # --------------------------
@@ -995,8 +995,8 @@ if main_page == "Last Month":
 #  HALAMAN TAHUNAN
 # --------------------------
 else:
-    st.header("Monitoring CLIMAT — Tahunan")
-    sub_page = st.sidebar.radio("Pilih Sub Page:", ["Monitoring Tahunan", "Performa Stasiun", "Rincian Data Tahunan"], key="sub_page_radio")
+    st.header("Monitoring CLIMAT — 2025")
+    sub_page = st.sidebar.radio("Pilih Sub Page:", ["Monitoring 2025", "Monitoring Stasiun", "Rincian Data 2025"], key="sub_page_radio")
 
     # helper kecil: normalisasi header & deteksi bulan
     MONTH_ABBR = ["Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agt","Sep","Okt","Nov","Des"]
@@ -1023,7 +1023,7 @@ else:
     # ========================
     # REKAP TAHUNAN NASIONAL
     # ========================
-    if sub_page == "Monitoring Tahunan":
+    if sub_page == "Monitoring 2025":
         st.subheader("Availability")
 
         # Pastikan df_status sudah ter-load; kalau kosong beri hint dan coba normalize header
@@ -1234,8 +1234,8 @@ else:
     # ========================
     # PERFORMA STASIUN (FULL, fix duplicate-col bug)
     # ========================
-    elif sub_page == "Performa Stasiun":
-        st.subheader("Performa Stasiun")
+    elif sub_page == "Monitoring Stasiun":
+        st.subheader("Monitoring Stasiun")
         if df_status is None or df_status.empty:
             st.info("Sheet 'Status' kosong — pastikan sheet tersedia dan gid benar.")
         else:
@@ -1462,8 +1462,8 @@ else:
     # ========================
     # RINCIAN DATA TAHUNAN
     # ========================
-    elif sub_page == "Rincian Data Tahunan":
-        st.subheader("Rincian Data Tahunan")
+    elif sub_page == "Rincian Data 2025":
+        st.subheader("Rincian Data 2025")
         tab1, tab2 = st.tabs(["DeltaHours", "Status"])
         with tab1:
             st.markdown(" ")
