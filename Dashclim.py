@@ -464,7 +464,7 @@ df_monthly_summary = data.get("monthlysummary", pd.DataFrame())
 #  App Main Navigation
 # --------------------------
 st.write("")  # spacing
-main_page = st.sidebar.radio("Pilih Halaman:", ["Bulanan", "Tahunan"], index=0, key="main_page_radio")
+main_page = st.sidebar.radio("Pilih Halaman:", ["Last Month", "Tahunan"], index=0, key="main_page_radio")
 
 #  HALAMAN BULANAN (robust)
 # --------------------------
@@ -552,7 +552,7 @@ def normalize_monthly_df(df: pd.DataFrame) -> pd.DataFrame:
 # Normalize monthly df once
 df_monthly_norm = normalize_monthly_df(df_monthly) if 'df_monthly' in globals() else pd.DataFrame()
 
-if main_page == "Bulanan":
+if main_page == "Last Month":
     if not df_monthly_norm.empty and "report_month" in df_monthly_norm.columns:
         # Ambil bulan-tahun unik dari kolom 'report_month'
         report_month = str(df_monthly_norm["report_month"].dropna().unique()[0])
@@ -1216,7 +1216,7 @@ else:
                         st.plotly_chart(fig_bar, use_container_width=True)
 
                     with pie_col:
-                        st.markdown("### Pie Chart Total {tahun}")
+                        st.markdown("### Pie Chart Total Nasional")
                         total_tepat = int(df_status['TEPAT_WAKTU'].sum())
                         total_terlambat = int(df_status['TERLAMBAT'].sum())
                         total_tidak = int(df_status['TIDAK_MENGIRIM'].sum())
