@@ -1216,7 +1216,7 @@ else:
                         st.plotly_chart(fig_bar, use_container_width=True)
 
                     with pie_col:
-                        st.markdown("### Pie Chart Total Nasional")
+                        st.markdown("### Pie Chart Total {tahun}")
                         total_tepat = int(df_status['TEPAT_WAKTU'].sum())
                         total_terlambat = int(df_status['TERLAMBAT'].sum())
                         total_tidak = int(df_status['TIDAK_MENGIRIM'].sum())
