@@ -565,9 +565,9 @@ if main_page == "Bulanan":
             "9": "September", "10": "Oktober", "11": "November", "12": "Desember"
         }.get(bulan_num, bulan_num)
 
-        st.header(f"📆 Monitoring CLIMAT {bulan_nama} {tahun}")
+        st.header(f"Monitoring CLIMAT {bulan_nama} {tahun}")
     else:
-        st.header("📆 Monitoring CLIMAT — Bulanan (Preview)")
+        st.header("Monitoring CLIMAT — Bulanan (Preview)")
 
 
     # KPI Cards computed from normalized df if available
@@ -594,7 +594,7 @@ if main_page == "Bulanan":
     st.markdown("---")
     
     # ---------- MAP FULL-WIDTH (atas) ----------
-    st.subheader("🗺️ Peta Availability")
+    st.subheader("Availability")
 
     # tampilkan peta full-width (keluarkan dari st.columns)
     if not df_monthly_norm.empty and {'LAT','LON','status'}.issubset(df_monthly_norm.columns):
@@ -709,7 +709,7 @@ if main_page == "Bulanan":
     pie_left, pie_right = st.columns(2)
 
     with pie_left:
-        st.subheader("📊 Persentase Pengiriman")
+        st.subheader("Persentase Pengiriman")
         if not df_monthly_norm.empty:
             # Pie 1: Mengirim vs Tidak Mengirim
             sent_series = df_monthly_norm["status"].apply(lambda s: "Mengirim" if s != "TIDAK MENGIRIM" else "Tidak Mengirim").value_counts()
@@ -725,7 +725,7 @@ if main_page == "Bulanan":
             st.info("Tidak ada data untuk Pie 1.")
 
     with pie_right:
-        st.subheader("📊 Persentase Ketepatan Waktu")
+        st.subheader("Persentase Ketepatan Waktu")
         if not df_monthly_norm.empty:
             # Pie 2: Ketepatan Waktu (TEPAT WAKTU, TERLAMBAT, TIDAK MENGIRIM)
             status_order = ["TEPAT WAKTU", "TERLAMBAT", "TIDAK MENGIRIM"]
@@ -748,7 +748,7 @@ if main_page == "Bulanan":
     # Render tabel per stasiun (FIX FINAL: ambil time_diff_hours dari df_monthly jika perlu; atur AgGrid)
     # --------------------------
     st.markdown("---")
-    st.subheader("📋 Tabel Data Per Stasiun")
+    st.subheader("Tabel Data Per Stasiun")
 
     def ensure_time_diff_from_source(df_norm: pd.DataFrame, df_src: pd.DataFrame) -> pd.DataFrame:
         """
@@ -1024,7 +1024,7 @@ else:
     # REKAP TAHUNAN NASIONAL
     # ========================
     if sub_page == "Monitoring Tahunan":
-        st.subheader("🗺️ Peta Availability")
+        st.subheader("Availability")
 
         # Pastikan df_status sudah ter-load; kalau kosong beri hint dan coba normalize header
         if df_status is None or df_status.empty:
@@ -1177,7 +1177,7 @@ else:
                     import plotly.express as px
                     import plotly.graph_objects as go
 
-                    st.markdown("### 📊 Diagram Batang per Bulan (Januari—Desember)")
+                    st.markdown("Diagram Batang per Bulan (Januari—Desember)")
 
                     # Build df_bulan ensuring order Jan..Des even if some months missing
                     df_bulan_rows = []
@@ -1235,7 +1235,7 @@ else:
     # PERFORMA STASIUN (FULL, fix duplicate-col bug)
     # ========================
     elif sub_page == "Performa Stasiun":
-        st.subheader("📈 Performa Stasiun")
+        st.subheader("Performa Stasiun")
         if df_status is None or df_status.empty:
             st.info("Sheet 'Status' kosong — pastikan sheet tersedia dan gid benar.")
         else:
