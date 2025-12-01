@@ -1735,7 +1735,7 @@ else:
 
 
         with tab2:
-            st.markdown("Tabel Status (No | Stasiun | WMO ID | Jan..Des) — tampilkan only Nama Stasiun, WMO ID, Jan..Des")
+            st.markdown(" ")
 
             def _prepare_status_display_local(df_src: pd.DataFrame) -> pd.DataFrame:
                 """
