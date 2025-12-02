@@ -1334,7 +1334,7 @@ else:
             # --- UI: filters & pagination ---
             left_col, right_col = st.columns([3,1])
             with left_col:
-                search_text = st.text_input("🔎 Cari nama stasiun (substring, case-insensitive)", value="")
+                search_text = st.text_input("🔎 Cari nama stasiun", value="")
             with right_col:
                 only_with_data = st.checkbox("Tampilkan hanya stasiun dengan data", value=True)
 
