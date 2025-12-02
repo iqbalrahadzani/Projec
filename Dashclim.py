@@ -32,7 +32,7 @@ except Exception:
 # --------------------------
 #  CONFIG
 # --------------------------
-st.set_page_config(page_title="Monitoring CLIMAT BMKG", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Monitoring Sandi CLIMAT BMKG", layout="wide", initial_sidebar_state="expanded")
 from utils.ui import setup_header
 
 setup_header()
@@ -565,9 +565,9 @@ if main_page == "Last Month":
             "9": "September", "10": "Oktober", "11": "November", "12": "Desember"
         }.get(bulan_num, bulan_num)
 
-        st.header(f"Monitoring CLIMAT {bulan_nama} {tahun}")
+        st.header(f"Monitoring Sandi CLIMAT {bulan_nama} {tahun}")
     else:
-        st.header("Monitoring CLIMAT — Bulanan (Preview)")
+        st.header("Monitoring Sandi CLIMAT — Bulanan (Preview)")
 
 
     # KPI Cards computed from normalized df if available
@@ -995,7 +995,7 @@ if main_page == "Last Month":
 #  HALAMAN TAHUNAN
 # --------------------------
 else:
-    st.header("Monitoring CLIMAT — 2025")
+    st.header("Monitoring Sandi CLIMAT — 2025")
     sub_page = st.sidebar.radio("Pilih Sub Page:", ["Monitoring 2025", "Monitoring Stasiun", "Rincian Data 2025"], key="sub_page_radio")
 
     # helper kecil: normalisasi header & deteksi bulan
@@ -1929,5 +1929,5 @@ else:
 
 # Footer
 st.markdown("---")
-st.caption("Dashboard Monitoring CLIMAT — BMKG")
+st.caption("Dashboard Monitoring Sandi CLIMAT — BMKG")
 st.caption("Aktualisasi Muhammad Iqbal Rahadzani")
